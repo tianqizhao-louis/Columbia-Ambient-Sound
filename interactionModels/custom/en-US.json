@@ -1,0 +1,273 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "columbia ambient sound",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "GetBirthdayIntent",
+          "slots": [
+            {
+              "name": "month",
+              "type": "AMAZON.Month",
+              "samples": [
+                "{month}"
+              ]
+            },
+            {
+              "name": "year",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "samples": [
+                "{year}"
+              ]
+            }
+          ],
+          "samples": [
+            "{year}",
+            "{month}",
+            "{month} {year}"
+          ]
+        },
+        {
+          "name": "UserActionIntent",
+          "slots": [
+            {
+              "name": "action",
+              "type": "Action"
+            }
+          ],
+          "samples": [
+            "{action}",
+            "I\u0027m {action} now",
+            "I am {action}",
+            "I\u0027m {action} right now"
+          ]
+        },
+        {
+          "name": "HolidayHandlerIntent",
+          "slots": [
+            {
+              "name": "holiday",
+              "type": "Holiday"
+            }
+          ],
+          "samples": [
+            "Let\u0027s try {holiday}",
+            "It\u0027s {holiday} today",
+            "{holiday}"
+          ]
+        },
+        {
+          "name": "ChooseModeIntent",
+          "slots": [
+            {
+              "name": "mode",
+              "type": "Mode"
+            }
+          ],
+          "samples": [
+            "{mode}",
+            "Let\u0027s do {mode} mode",
+            "I want to be in {mode} mode",
+            "{mode} mode"
+          ]
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.LoopOffIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.LoopOnIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PreviousIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StartOverIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NextIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "studying",
+              "name": {
+                "value": "studying"
+              }
+            },
+            {
+              "id": "resting",
+              "name": {
+                "value": "resting"
+              }
+            },
+            {
+              "id": "cooking",
+              "name": {
+                "value": "cooking"
+              }
+            }
+          ],
+          "name": "Action"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Halloween"
+              }
+            },
+            {
+              "name": {
+                "value": "Christmas"
+              }
+            }
+          ],
+          "name": "Holiday"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "surprise me"
+              }
+            },
+            {
+              "name": {
+                "value": "normal"
+              }
+            },
+            {
+              "name": {
+                "value": "holiday"
+              }
+            }
+          ],
+          "name": "Mode"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "GetBirthdayIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "month",
+              "type": "AMAZON.Month",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.765084679473.1024978680073"
+              }
+            },
+            {
+              "name": "year",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.765084679473.835503825671"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "UserActionIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "action",
+              "type": "Action",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.765084679473.835503825671",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Thanks. What year were they born in?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.765084679473.1024978680073",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Thanks. What month were they born in?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "20"
+}
